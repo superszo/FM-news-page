@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0; 
+    font-family: Inter, sans-serif;
+    color: #5E607A;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 56px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 800;
+    
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+p {
+    font-size: 15px;
+    line-height: 26px;
+}
+
+.grid {
+    display: grid;
+    grid-template: "nav nav nav" auto
+                   "main main new" 2fr
+                   "no-1 no-2 no-3" auto;
+    gap: 32px;
+    width: 75%;
+    margin: 90px auto 130px;
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    width: 100%;
+}
+
+ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+}
+
+li:hover {
+    color: #F15D51;
+    cursor: pointer;
+}
+
+#menu-mobile {
+    position: fixed;
+    top: 0;
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 70%;
+    transition: right 800ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+}
+#menu-mobile li {
+    color: #00001A;
+}
+
+.show {
+    right: 0;
+}
+
+.hide {
+    right: -70%;
+}
+
+#open-menu {
+    cursor: pointer;
+    z-index: 100;
+}
+
+#menu-mobile ul {
+    flex-direction: column;
+    color: #00001A;
+    left: 24px;
+    gap: 24px;
+    position: absolute;
+    top: 25%;
+ 
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template: "a a"
+                    "b c" / 1fr 1fr; 
+    gap: 28px;
+    margin-bottom: 40px;
+}
+
+.main img {
+    grid-area: a;
+    width: 100%;
+}
+
+.main h1 {
+    grid-area: b;
+    color: #00001A;
+}
+
+.main-text {
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    border: none;
+    
+    background-color: #F15D51;
+    letter-spacing: 4.38px;
+    line-height: 24px;
+    padding: 12px 32px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+
+button:hover {
+    background-color: #00001A;
+    cursor:pointer;
+}
+
+.new {
+    grid-area: new;
+    background-color: #00001A;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px;
+}
+
+.new h2 {
+    color: #E9AA52;
+}
+
+.new p {
+    color: #C5C6CE;
+}
+
+.item-title {
+    color: #FFFDFA;
+}
+
+.item-title:hover {
+    color: #E9AA52;
+    cursor: pointer;
+}
+
+.news-item {
+    padding: 30px 0;
+}
+
+.news-item:last-child {
+    padding-bottom: 0;
+}
+
+.news-item:nth-child(3) {
+    border-bottom: 1px solid #5E607A;
+    border-top: 1px solid #5E607A;
+}
+
+.no-1 {
+    grid-area: no-1;
+}
+
+.no-2 {
+    grid-area: no-2;
+}
+
+.no-3 {
+    grid-area: no-3;
+}
+
+.top-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.top-item img {
+    width: 100px;
+    height: 127px;
+    margin-right: 24px;
+    
+}
+
+.top-item-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   
+}
+
+.top-item-text h5 {
+    margin: 12px 0 10px 0;
+}
+
+.top-item-text h5:hover {
+    color: #F15D51;
+    cursor: pointer;
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: initial;
+    }
+
+    .grid {
+        margin: 88px auto 80px;
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        align-items: center;
+    }
+
+    nav {
+        margin-bottom: 0;
+        position: fixed;
+        background-color: #FFFFFF;
+        top: 0;
+        height: 88px;
+        width: 95%;
+        transition: top 600ms ease;
+    }
+
+    .top-item {
+        width: 70%;
+    }
+
+
+
+}
+
+@media screen and (max-width:520px) {
+    .top-item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    h1 {
+        font-size: 40px;
+        line-height: 40px;
+        margin-top: 8px;
+    }
+
+    button {
+        margin-top:24px;
+    }
+
+    
+}
